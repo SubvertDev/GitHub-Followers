@@ -17,6 +17,7 @@
 		B845552B262C921E00D7A450 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B845552A262C921E00D7A450 /* UIViewController+Ext.swift */; };
 		B8455536262CA34A00D7A450 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8455535262CA34A00D7A450 /* Follower.swift */; };
 		B845553A262CA35100D7A450 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8455539262CA35100D7A450 /* User.swift */; };
+		B845553E262CB4B900D7A450 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B845553D262CB4B900D7A450 /* NetworkManager.swift */; };
 		B8DC5E07262B10A2009193C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC5E06262B10A2009193C4 /* AppDelegate.swift */; };
 		B8DC5E09262B10A2009193C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC5E08262B10A2009193C4 /* SceneDelegate.swift */; };
 		B8DC5E10262B10A4009193C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DC5E0F262B10A4009193C4 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		B845552A262C921E00D7A450 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		B8455535262CA34A00D7A450 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		B8455539262CA35100D7A450 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B845553D262CB4B900D7A450 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B8DC5E03262B10A2009193C4 /* GitHub Followers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub Followers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DC5E06262B10A2009193C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8DC5E08262B10A2009193C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B845553C262CB4AC00D7A450 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B845553D262CB4B900D7A450 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		B8DC5DFA262B10A1009193C4 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		B8DC5E05262B10A2009193C4 /* GitHub Followers */ = {
 			isa = PBXGroup;
 			children = (
+				B845553C262CB4AC00D7A450 /* Managers */,
 				B8455534262CA33E00D7A450 /* Model */,
 				B845552F262C98E800D7A450 /* Screens */,
 				B8455530262C98EC00D7A450 /* Custom Views */,
@@ -218,6 +229,7 @@
 				B8DC5E1E262B2840009193C4 /* SearchVC.swift in Sources */,
 				B8DC5E07262B10A2009193C4 /* AppDelegate.swift in Sources */,
 				B845551E262C7F4300D7A450 /* GFTitleLabel.swift in Sources */,
+				B845553E262CB4B900D7A450 /* NetworkManager.swift in Sources */,
 				B8455525262C86A000D7A450 /* GFAlertContainerView.swift in Sources */,
 				B8DC5E09262B10A2009193C4 /* SceneDelegate.swift in Sources */,
 			);
