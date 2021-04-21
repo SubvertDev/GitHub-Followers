@@ -27,6 +27,7 @@
 		B8DC5E13262B10A4009193C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DC5E11262B10A4009193C4 /* LaunchScreen.storyboard */; };
 		B8DC5E1E262B2840009193C4 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC5E1D262B2840009193C4 /* SearchVC.swift */; };
 		B8DC5E21262B2853009193C4 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC5E20262B2853009193C4 /* FavoritesVC.swift */; };
+		B8F5997426307C8300720067 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5997326307C8300720067 /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		B8DC5E14262B10A4009193C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8DC5E1D262B2840009193C4 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		B8DC5E20262B2853009193C4 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		B8F5997326307C8300720067 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				B8455541262CC14F00D7A450 /* ErrorMessage.swift */,
+				B8F5997326307C8300720067 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				B8DC5E07262B10A2009193C4 /* AppDelegate.swift in Sources */,
 				B845551E262C7F4300D7A450 /* GFTitleLabel.swift in Sources */,
 				B8455542262CC14F00D7A450 /* ErrorMessage.swift in Sources */,
+				B8F5997426307C8300720067 /* UIHelper.swift in Sources */,
 				B845553E262CB4B900D7A450 /* NetworkManager.swift in Sources */,
 				B8455525262C86A000D7A450 /* GFAlertContainerView.swift in Sources */,
 				B8DC5E09262B10A2009193C4 /* SceneDelegate.swift in Sources */,
