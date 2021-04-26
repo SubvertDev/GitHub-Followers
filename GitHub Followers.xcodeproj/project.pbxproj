@@ -33,6 +33,7 @@
 		B8DC5E13262B10A4009193C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DC5E11262B10A4009193C4 /* LaunchScreen.storyboard */; };
 		B8DC5E1E262B2840009193C4 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC5E1D262B2840009193C4 /* SearchVC.swift */; };
 		B8DC5E21262B2853009193C4 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC5E20262B2853009193C4 /* FavoritesVC.swift */; };
+		B8E65E39263700AE0031DA29 /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E65E38263700AE0031DA29 /* GFItemInfoVC.swift */; };
 		B8F5997426307C8300720067 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5997326307C8300720067 /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		B8DC5E14262B10A4009193C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8DC5E1D262B2840009193C4 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		B8DC5E20262B2853009193C4 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		B8E65E38263700AE0031DA29 /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
 		B8F5997326307C8300720067 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +209,7 @@
 			children = (
 				B8455527262C86B600D7A450 /* GFAlertVC.swift */,
 				B88D17F82635DFEC00AA5B82 /* GFUserInfoHeaderVC.swift */,
+				B8E65E38263700AE0031DA29 /* GFItemInfoVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				B8DC5E1E262B2840009193C4 /* SearchVC.swift in Sources */,
 				B88D17F92635DFEC00AA5B82 /* GFUserInfoHeaderVC.swift in Sources */,
 				B8DC5E07262B10A2009193C4 /* AppDelegate.swift in Sources */,
+				B8E65E39263700AE0031DA29 /* GFItemInfoVC.swift in Sources */,
 				B845551E262C7F4300D7A450 /* GFTitleLabel.swift in Sources */,
 				B8455542262CC14F00D7A450 /* GFError.swift in Sources */,
 				B8F5997426307C8300720067 /* UIHelper.swift in Sources */,
