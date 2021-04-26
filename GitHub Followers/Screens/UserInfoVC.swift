@@ -12,6 +12,7 @@ class UserInfoVC: UIViewController {
     var headerView = UIView()
     var itemViewOne = UIView()
     var itemViewTwo = UIView()
+    var dateLabel = GFBodyLabel(textAlignment: .center)
     var itemViews: [UIView] = []
     
     var username: String!
@@ -32,7 +33,7 @@ class UserInfoVC: UIViewController {
     func layoutUI() {
         
         let padding: CGFloat = 20
-        itemViews = [headerView, itemViewOne, itemViewTwo]
+        itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
         
         for itemView in itemViews {
             view.addSubview(itemView)
@@ -52,7 +53,10 @@ class UserInfoVC: UIViewController {
             itemViewOne.heightAnchor.constraint(equalToConstant: 140),
 
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
-            itemViewTwo.heightAnchor.constraint(equalToConstant: 140)
+            itemViewTwo.heightAnchor.constraint(equalToConstant: 140),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
     
@@ -66,6 +70,8 @@ class UserInfoVC: UIViewController {
                     self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
                     self.add(childVC: GFRepoItemVC(user: user), to: self.itemViewOne)
                     self.add(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
+                    self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
+                    
                 }
                 
             case .failure(let error):
