@@ -21,6 +21,7 @@ class FollowersListVC: UIViewController {
     var page = 1
     var hasMoreFollowers = true
     var isSearching = false
+    var isLoadingMoreFollowers = false
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -61,7 +62,6 @@ class FollowersListVC: UIViewController {
     func configureSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search for an username"
         navigationItem.searchController = searchController
     }
@@ -149,7 +149,7 @@ extension FollowersListVC: UICollectionViewDelegate {
         let height = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
-            guard hasMoreFollowers else { return }
+            guard hasMoreFollowers, !isLoadingMoreFollowers else { return }
             page += 1
             getFollowers(username: username, page: page)
         }
@@ -168,18 +168,18 @@ extension FollowersListVC: UICollectionViewDelegate {
     
 }
 
-extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
+extension FollowersListVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            filteredFollowers.removeAll()
+            updateData(with: followers)
+            isSearching = false
+            return
+        }
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(with: filteredFollowers)
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
-        updateData(with: followers)
     }
 }
 
@@ -191,6 +191,7 @@ extension FollowersListVC: FollowerListVCDelegate {
         followers.removeAll()
         filteredFollowers.removeAll()
         collectionView.setContentOffset(.zero, animated: true)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         getFollowers(username: username, page: 1)
     }
 }
