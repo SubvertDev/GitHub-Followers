@@ -9,10 +9,6 @@ import UIKit
 
 class GFAlertContainerView: UIView {
     
-    let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20)
-    let messageLabel = GFBodyLabel(textAlignment: .center)
-    let actionButton = GFButton(backgroundColor: .systemRed, title: "Ok")
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
