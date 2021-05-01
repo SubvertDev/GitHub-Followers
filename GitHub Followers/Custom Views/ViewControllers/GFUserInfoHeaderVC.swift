@@ -92,7 +92,7 @@ class GFUserInfoHeaderVC: UIViewController {
             bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: textPadding),
-            bioLabel.heightAnchor.constraint(equalToConstant: 90)
+            bioLabel.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
     
