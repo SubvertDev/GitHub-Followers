@@ -78,20 +78,24 @@ class FollowersListVC: UIViewController {
             
             switch result {
             case .success(let followers):
-                if followers.count < 100 { self.hasMoreFollowers = false }
-                self.followers.append(contentsOf: followers)
-                
-                if self.followers.isEmpty {
-                    let message = "This user doesn't have any followers. Go follow them! 😄"
-                    DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
-                }
-                
-                self.updateData(with: self.followers)
+                self.updateUI(with: followers)
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something bad happened", message: error.rawValue, buttonTitle: "Ok")
             }
         }
+    }
+    
+    func updateUI(with followers: [Follower]) {
+        if followers.count < 100 { self.hasMoreFollowers = false }
+        self.followers.append(contentsOf: followers)
+        
+        if self.followers.isEmpty {
+            let message = "This user doesn't have any followers. Go follow them! 😄"
+            DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
+        }
+        
+        self.updateData(with: self.followers)
     }
     
     func configureDataSource() {
@@ -118,21 +122,26 @@ class FollowersListVC: UIViewController {
             
             switch result {
             case .success(let user):
-                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
-                
-                PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
-                    guard let self = self else { return }
-                    
-                    guard let error = error else {
-                        self.presentGFAlertOnMainThread(title: "Success!", message: "You've just successfully favorited this user! 🥳", buttonTitle: "Ok")
-                        return
-                    }
-                    self.presentGFAlertOnMainThread(title: "Someting went wrong", message: error.rawValue, buttonTitle: "Ok")
-                }
+                self.addUserToFavorites(user: user)
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
+        }
+    }
+    
+    func addUserToFavorites(user: User) {
+        let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+        
+        PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
+            guard let self = self else { return }
+            
+            guard let error = error else {
+                self.presentGFAlertOnMainThread(title: "Success!", message: "You've just successfully favorited this user! 🥳", buttonTitle: "Ok")
+                return
+            }
+            
+            self.presentGFAlertOnMainThread(title: "Someting went wrong", message: error.rawValue, buttonTitle: "Ok")
         }
     }
 }

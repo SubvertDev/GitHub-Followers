@@ -10,7 +10,7 @@ import UIKit
 class GFUserInfoHeaderVC: UIViewController {
     
     let avatarImageView = GFAvatarImageView(frame: .zero)
-    let loginLabel = GFTitleLabel(textAlignment: .left, fontSize: 34)
+    let usernameLabel = GFTitleLabel(textAlignment: .left, fontSize: 34)
     let nameLabel = GFSecondaryTitleLabel(fontSize: 18)
     let locationImageView = UIImageView()
     let locationLabel = GFSecondaryTitleLabel(fontSize: 18)
@@ -29,18 +29,14 @@ class GFUserInfoHeaderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        view.addSubviews(avatarImageView, usernameLabel, nameLabel, locationImageView, locationLabel, bioLabel)
         configureUI()
         configureUIElements()
     }
     
     func configureUIElements() {
-        NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] image in
-            guard let self = self else { return }
-            DispatchQueue.main.async { self.avatarImageView.image = image }
-        }
-        
-        loginLabel.text = user.login
+        avatarImageView.downloadImage(fromURL: user.avatarUrl)
+        usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No Location"
         bioLabel.text = user.bio ?? "No Bio Available"
@@ -48,15 +44,6 @@ class GFUserInfoHeaderVC: UIViewController {
         
         locationImageView.image = SFSymbols.location
         locationImageView.tintColor = .secondaryLabel
-    }
-    
-    func addSubviews() {
-        view.addSubviews(avatarImageView,
-                        loginLabel,
-                        nameLabel,
-                        locationImageView,
-                        locationLabel,
-                        bioLabel)
     }
     
     func configureUI() {
@@ -69,10 +56,10 @@ class GFUserInfoHeaderVC: UIViewController {
             avatarImageView.widthAnchor.constraint(equalToConstant: 90),
             avatarImageView.heightAnchor.constraint(equalToConstant: 90),
             
-            loginLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
-            loginLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textPadding),
-            loginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            loginLabel.heightAnchor.constraint(equalToConstant: 38),
+            usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
+            usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textPadding),
+            usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            usernameLabel.heightAnchor.constraint(equalToConstant: 38),
             
             nameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textPadding),
@@ -95,5 +82,4 @@ class GFUserInfoHeaderVC: UIViewController {
             bioLabel.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
-    
 }

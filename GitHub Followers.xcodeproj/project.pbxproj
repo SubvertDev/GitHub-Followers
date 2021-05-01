@@ -232,7 +232,7 @@
 		B8A780AD263481F10021AE79 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B8E65E3E26370DE80031DA29 /* GFItemInfoVCs */,
+				B8E65E3E26370DE80031DA29 /* ItemInfoVCs */,
 				B8455527262C86B600D7A450 /* GFAlertVC.swift */,
 				B88D17F82635DFEC00AA5B82 /* GFUserInfoHeaderVC.swift */,
 			);
@@ -278,14 +278,14 @@
 			path = "GitHub Followers";
 			sourceTree = "<group>";
 		};
-		B8E65E3E26370DE80031DA29 /* GFItemInfoVCs */ = {
+		B8E65E3E26370DE80031DA29 /* ItemInfoVCs */ = {
 			isa = PBXGroup;
 			children = (
 				B8E65E38263700AE0031DA29 /* GFItemInfoVC.swift */,
 				B8E65E3B26370C8A0031DA29 /* GFRepoItemVC.swift */,
 				B8E65E3F26370E130031DA29 /* GFFollowerItemVC.swift */,
 			);
-			path = GFItemInfoVCs;
+			path = ItemInfoVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
