@@ -16,4 +16,4 @@ Tutorial project by Sean Allen's [Take Home Project](https://seanallen.teachable
 - Project organization.
 
 ## Screenshots
-![Screenshots from app shown on iPhone](https://i.imgur.com/qwLY3gE.jpg)
+![Screenshots](https://i.imgur.com/6ezmkFp.png)
