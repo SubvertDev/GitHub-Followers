@@ -18,4 +18,4 @@ Tutorial project by Sean Allen's [Take Home Project](https://seanallen.teachable
 - Project organization.
 
 ## Screenshots
-![Screenshots](https://i.imgur.com/6ezmkFp.png)
+![Screenshots](https://i.ibb.co/YcbQ4bW/mockup.png)
