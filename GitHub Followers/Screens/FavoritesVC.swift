@@ -24,10 +24,9 @@ class FavoritesVC: UIViewController {
     }
     
     func configureViewController() {
-        view.backgroundColor = .systemBackground
         title = "Favorites"
+        view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
     
     func configureTableView() {

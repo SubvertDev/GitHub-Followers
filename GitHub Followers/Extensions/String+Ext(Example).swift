@@ -1,8 +1,8 @@
 
-  String+Ext.swift
-  GitHub Followers
+//  String+Ext.swift
+//  GitHub Followers
 
-  Created by Subvert on 26.04.2021.
+//  Created by Subvert on 26.04.2021.
 
 
 import Foundation
